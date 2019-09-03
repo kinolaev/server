@@ -52,6 +52,8 @@ OC.MimeType = {
 			return 'folder-public';
 		} else if (mimeType === 'dir-external' && $.inArray('folder-external', files) !== -1) {
 			return 'folder-external';
+		} else if (mimeType.substring(0, 4) === 'dir-' && $.inArray('folder', files) !== -1) {
+			return 'folder';
 		} else if ($.inArray(icon, files) !== -1) {
 			return icon;
 		} else if ($.inArray(icon.split('-')[0], files) !== -1) {
